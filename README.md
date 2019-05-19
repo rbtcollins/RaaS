@@ -74,9 +74,26 @@ nodes x configurations. When rolling out a new configuration, a control loop
 to new nodes rather than either a) a human or b) a for-loop which only looks
 at immediate errors
 
-# Use case 3 - Application running with LaunchDarkly or similar
+# Use case 3 - Application running with LaunchDarkly or https://github.com/Unleash/unleash or others
 
 Connect RaaS to the application time-series DB - in particular to the SLO
-series, and enable a LaunchDarkly API integration to the RaaS API. Let RaaS
+series, and enable API integration between the two APIs. Let RaaS
 scale the launch from 0 to 100 percent smoothly, watching your SLOs in realtime,
 and holding the scale the moment things start to look spotty.
+
+# Discovery with @developerjack
+
+* Who will be writing against the API?
+
+Case 2 and Case 3 could be quite different mental model wise - consider
+presenting them differently "deployment" and "release", even if the
+machinery isn't very different it may be more easily understood.
+
+* Approaching the API design
+a) domain definition
+b) resource abstraction and serialisation
+c) mental model / technical communication
+d) REST etc
+
+* Who are the customers - who will choose to run an instance and collaborate on building this,
+  who will choose to use a hosted version?
